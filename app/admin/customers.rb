@@ -8,5 +8,19 @@ ActiveAdmin.register Customer do
 	  
 	end
 
+	sidebar "Orders", :only => :show do
+  	table_for customer.orders do |t|
+  		t.column("Id") { |order| link_to(order.id, admin_order_path(order)) }
+  		t.column("Trees") { |order| order.trees.count }
+  		t.column("Paid") { |order| order.paid }
+  	end
+	  
+	end
+
+	action_item :only => :show do
+    link_to('Add order', new_admin_order_path)
+  end
+
+
   
 end

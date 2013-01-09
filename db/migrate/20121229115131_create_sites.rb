@@ -4,7 +4,7 @@ class CreateSites < ActiveRecord::Migration
       t.string :name
       t.text :description
 
-      t.integer :workgroup_id
+      t.integer :treeholding_id
 
       t.timestamps
     end

@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base
-  attr_accessible :description, :name, :workgroup_id
-  belongs_to :workgroup
+  attr_accessible :description, :name, :treeholding_id
+  belongs_to :treeholding
   has_many :trees
 end

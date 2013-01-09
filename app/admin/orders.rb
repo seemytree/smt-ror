@@ -1,7 +1,7 @@
 ActiveAdmin.register Order  do
   form :only => :create do |f|
     f.inputs "Order" do
-    	f.input :customer
+    	f.input :customer, :as => :select, :include_blank => false, :member_label => :name
 
       if f.object.new_record?
       	f.input :no_of_trees, :label => "Number of trees"
